@@ -11,7 +11,7 @@ const Transactions = () => {
   useEffect(() => {
     let myID = localStorage.getItem('myID');
     console.log(offset)
-    fetch(`http://localhost:4000/contacts/history/${myID}?offset=${offset}&limit=${limit}`)
+    fetch(`https://mybank-d04s.onrender.com/contacts/history/${myID}?offset=${offset}&limit=${limit}`)
     .then((res) => res.json())
     .then(data => {
       setHistory(data.history)

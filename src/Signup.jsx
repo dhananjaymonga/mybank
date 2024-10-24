@@ -14,7 +14,7 @@ const Signup = () => {
   const handleSignup = (e) => {
     e.preventDefault();
 
-    fetch('http://localhost:4000/users/signup', {
+    fetch('https://mybank-d04s.onrender.com/users/signup', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'

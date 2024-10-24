@@ -7,7 +7,7 @@ const VerifyEmail = () => {
   const navigate = useNavigate()
   
   useEffect(() => {
-    fetch(`http://localhost:4000/users/verify-email?token=${obj.get('token')}`)
+    fetch(`https://mybank-d04s.onrender.com/users/verify-email?token=${obj.get('token')}`)
     .then(res => {
       if(res.ok) {
         navigate('/')

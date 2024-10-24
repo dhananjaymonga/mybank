@@ -18,7 +18,7 @@ const App = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    fetch('http://localhost:4000/users/check', {
+    fetch('https://mybank-d04s.onrender.com/users/check', {
       credentials: 'include'
     })
     .then((res) => {
@@ -40,7 +40,7 @@ const App = () => {
   }, [query])
 
   useEffect(() => {
-    fetch('http://localhost:4000/contacts', { credentials: 'include' })
+    fetch('https://mybank-d04s.onrender.com/contacts', { credentials: 'include' })
     .then(res => res.json())
     .then(data => {
       setFriends(data.map(c => ({ ...c, hidden: true })));
@@ -64,7 +64,7 @@ const App = () => {
       // setFriends(friends.map((f, idx) => i == idx ? {...f, money: decision == 'r' ? f.money + amount : f.money-amount} : f))
 
       try {
-        const res = await fetch(`http://localhost:4000/contacts/payment/${decision}/${id}?amount=${amount}&name=${name}`, {
+        const res = await fetch(`https://mybank-d04s.onrender.com/contacts/payment/${decision}/${id}?amount=${amount}&name=${name}`, {
           credentials: 'include'
         });
 
@@ -111,7 +111,7 @@ const App = () => {
   const handleLogout = async () => {
     try {
 
-      const res = await fetch('http://localhost:4000/users/logout', {
+      const res = await fetch('https://mybank-d04s.onrender.com/users/logout', {
         credentials: "include"
       });
       if(res.ok) {
@@ -133,7 +133,7 @@ const App = () => {
       return;
     }
     
-    fetch('http://localhost:4000/contacts', {
+    fetch('https://mybank-d04s.onrender.com/contacts', {
       method: 'POST',
       body: JSON.stringify({name: newFriend}),
       headers: {

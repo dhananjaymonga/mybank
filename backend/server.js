@@ -9,7 +9,7 @@ const app = express()
 const port = 4000
 
 app.use(cors({
-  origin: 'http://localhost:3000',
+  origin: 'https://mybank-silk.vercel.app',
   credentials: true
 }))
 
@@ -19,7 +19,7 @@ app.use(express.json())
 app.use('/users', userRouter);
 app.use('/contacts', contactRouter);
 
-mongoose.connect('mongodb://localhost:27017/mybank')
+mongoose.connect('mongodb+srv://dhananjaymonga10:hZcY9ZPNfU6uhM8B@cluster0.bwc3q.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0')
 .then(() => {
   app.listen(port, () => {
     console.log('listening at port ', port)
